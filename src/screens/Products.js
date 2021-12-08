@@ -1,10 +1,12 @@
+import React from "react";
+
 function Products() {
   return (
-    <div>
-      <p>
+    <>
+      <p style={{width: "500px", height: "2000px"}}>
         Products
       </p>
-    </div>
+    </>
   );
 }
 
