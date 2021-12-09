@@ -13,6 +13,7 @@ a {
   padding: 100px 60px;
 }
 
-input:focus-visible {
+input:focus-visible,
+select:focus-visible {
   outline: none;
 }

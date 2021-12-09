@@ -6,6 +6,7 @@ export const useProducts = () => {
 
   const [searchValue, setSearchValue] = useState("");
   const [selectedModels, setSelectedModels] = useState([]);
+  const [order, setOrder] = useState("");
 
   const products = useSelector((state) => state.productsModel.products);
 
@@ -44,8 +45,10 @@ export const useProducts = () => {
     searchValue,
     brands,
     selectedModels,
+    order,
     setSearchValue,
     setSelectedModels,
     getIsVisibleProducts,
+    setOrder,
   };
 };
