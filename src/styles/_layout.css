@@ -12,3 +12,7 @@ a {
 .content {
   padding: 100px 60px;
 }
+
+input:focus-visible {
+  outline: none;
+}
