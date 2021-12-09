@@ -8,24 +8,28 @@ import Products from "./screens/Products";
 
 import ScrollToTop from "./utils/ScrollToTop";
 import AppStart from "./helpers/AppStart";
+import Layout from "./components/common/layout/Layout";
+import "./styles/styles.css";
 
 const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <ScrollToTop>
-          <AppStart>
-            <Routes>
-              <Route exact path="/" element={<Products />} />
-              {/* <Route path="/:productId">
+        <AppStart>
+          <ScrollToTop>
+            <Layout>
+              <Routes>
+                <Route exact path="/" element={<Products />} />
+                {/* <Route path="/:productId">
               <Video />
             </Route>
             <Route path="*">
               <NotFound />
             </Route> */}
-            </Routes>
-          </AppStart>
-        </ScrollToTop>
+              </Routes>
+            </Layout>
+          </ScrollToTop>
+        </AppStart>
       </BrowserRouter>
     </Provider>
   );

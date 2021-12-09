@@ -1,0 +1,56 @@
+.nav-bar {
+  width: 100vw;
+  height: 75px;
+  background-color: #171616;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  color: #ffff;
+  font-family: "OrkneyMedium";
+}
+
+.nav-bar .products {
+  margin-left: 60px;
+  width: 200px;
+}
+
+.nav-bar .cart {
+  padding-right: 60px;
+  width: 200px;
+  text-align: right;
+}
+
+.bar {
+  background-color: #ecc95c;
+  width: 75px;
+  height: 4px;
+  position: relative;
+  top: 26px;
+}
+
+.logo-1,
+.logo-2 {
+  font-size: 24px;
+}
+
+.logo-2 {
+  color: #ecc95c;
+}
+
+.cart-icon {
+  width: 18px;
+}
+
+.counter {
+  background-color: #ecc95c;
+  border-radius: 50px;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  top: 14px;
+}

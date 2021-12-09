@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "OrkneyRegular";
+  src: url("../assets/fonts/orkney-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "OrkneyMedium";
+  src: url("../assets/fonts/orkney-medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "OrkneyBold";
+  src: url("../assets/fonts/orkney-bold.woff") format("woff");
+}
+
+body {
+  font-family: "OrkneyRegular";
+}
