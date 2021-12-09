@@ -1,27 +1,34 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Products from "./screens/Products";
 
 import ScrollToTop from "./utils/ScrollToTop";
+import AppStart from "./helpers/AppStart";
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
         <ScrollToTop>
-          <Routes>
-            <Route exact path='/' element={<Products/>}/>
-            {/* <Route path="/:productId">
+          <AppStart>
+            <Routes>
+              <Route exact path="/" element={<Products />} />
+              {/* <Route path="/:productId">
               <Video />
             </Route>
             <Route path="*">
               <NotFound />
             </Route> */}
-          </Routes>
+            </Routes>
+          </AppStart>
         </ScrollToTop>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Provider>
   );
-}
+};
 
 ReactDOM.render(<App />, document.getElementById("root"));

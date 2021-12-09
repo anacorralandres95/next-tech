@@ -1,13 +1,14 @@
 import React from "react";
+import { useProducts } from "./useProducts";
 
-function Products() {
+const Products = () => {
+  const { products } = useProducts();
+
   return (
     <>
-      <p style={{width: "500px", height: "2000px"}}>
-        Products
-      </p>
+      <p style={{ width: "500px", height: "2000px" }}>Products</p>
     </>
   );
-}
+};
 
 export default Products;
