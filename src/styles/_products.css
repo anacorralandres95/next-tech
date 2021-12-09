@@ -1,0 +1,25 @@
+.brands-container {
+  display: inline-block;
+  margin-top: 25px;
+}
+
+.brands-container .small {
+  opacity: 0.6;
+  margin-right: 20px;
+}
+
+.brand {
+  background-color: white;
+  display: inline-block;
+  padding: 12px;
+  border-radius: 20px;
+  font-family: "OrkneyMedium";
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.brand.brand-selected {
+  background-color: #ecc95c;
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+  color: white;
+}
