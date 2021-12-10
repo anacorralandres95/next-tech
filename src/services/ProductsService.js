@@ -11,6 +11,15 @@ const ProductsService = {
 
     return response.data;
   },
+  addProduct: async ({ productId, colorCode, storageCode }) => {
+    const response = await Api.post("/cart", {
+      id: productId,
+      colorCode,
+      storageCode,
+    });
+
+    return response.data.count;
+  },
 };
 
 export default ProductsService;

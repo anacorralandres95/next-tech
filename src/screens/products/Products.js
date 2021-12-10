@@ -28,7 +28,7 @@ const Products = () => {
 
   const clearSelectedBrands = () => setSelectedModels([]);
 
-  if (!products) <></>;
+  if (!products) return <></>;
 
   const orderedData = ProductsUtils.getOrderedProducts(products, order);
 
@@ -62,7 +62,11 @@ const Products = () => {
       <div className="product-card-container">
         {orderedData?.map((product) => {
           if (getIsVisibleProducts(product))
-            return <ProductCard product={product} />;
+            return (
+              <React.Fragment key={product.id}>
+                <ProductCard product={product} />
+              </React.Fragment>
+            );
         })}
       </div>
     </>

@@ -21,6 +21,10 @@ export const productsModel = createModel()({
       state.singularProduct = product;
       return state;
     },
+    setCounter: (state, { counter }) => {
+      state.counter = counter;
+      return state;
+    },
   },
   effects: (dispatch) => ({
     async getProductsInfo(_, rootState) {
@@ -37,6 +41,19 @@ export const productsModel = createModel()({
       try {
         const product = await ProductsService.getProductById({ productId });
         dispatch.productsModel.setSingularProduct({ product });
+      } catch (err) {
+        return err;
+      }
+    },
+    async addProduct({ productId, colorCode, storageCode }) {
+      try {
+        const counter = await ProductsService.addProduct({
+          productId,
+          colorCode,
+          storageCode,
+        });
+
+        dispatch.productsModel.setCounter({ counter });
       } catch (err) {
         return err;
       }

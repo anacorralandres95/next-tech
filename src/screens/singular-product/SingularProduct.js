@@ -1,10 +1,14 @@
 import React from "react";
+import ProductsUtils from "../../utils/ProductUtils";
 import { useSingularProduct } from "./useSingularProduct";
 
 const SingularProduct = () => {
-  const { product } = useSingularProduct();
+  const { product, onChangeColor, onChangeStorage, addCart } =
+    useSingularProduct();
 
   if (!product) return <></>;
+
+  const details = ProductsUtils.getProductTechnicDetails(product);
 
   return (
     <div className="product-container">
@@ -21,84 +25,45 @@ const SingularProduct = () => {
 
         <p className="technic-title">Detalles técnicos</p>
 
-        {product.cpu && (
-          <div className="technic-detail">
-            <small>CPU</small>
-            <p>{product.cpu}</p>
-          </div>
-        )}
+        {details.map((detail, i) => {
+          if (detail.value) {
+            return (
+              <div className="technic-detail" key={i}>
+                <small>{detail.title}</small>
+                <p>{detail.value}</p>
+              </div>
+            );
+          }
+        })}
 
-        {product.ram && (
-          <div className="technic-detail">
-            <small>RAM</small>
-            <p>{product.ram}</p>
+        <div className="product-selection">
+          <div>
+            <small className="small">Elige color</small>
+            <select onChange={onChangeColor}>
+              {product.options.colors.map((color, i) => {
+                return (
+                  <option value={color.code} key={i}>
+                    {color.name}
+                  </option>
+                );
+              })}
+            </select>
           </div>
-        )}
-
-        {product.os && (
-          <div className="technic-detail">
-            <small>Sistema operativo</small>
-            <p>{product.os}</p>
+          <div>
+            <small className="small">Elige almacenamiento</small>
+            <select onChange={onChangeStorage}>
+              {product.options.storages.map((store, i) => {
+                return (
+                  <option value={store.code} key={i}>
+                    {store.name}
+                  </option>
+                );
+              })}
+            </select>
           </div>
-        )}
+        </div>
 
-        {product.displayType && (
-          <div className="technic-detail">
-            <small>Tipo de pantalla</small>
-            <p>{product.displayType}</p>
-          </div>
-        )}
-
-        {product.displayResolution && (
-          <div className="technic-detail">
-            <small>Resolución de pantalla</small>
-            <p>{product.displayResolution}</p>
-          </div>
-        )}
-
-        {product.displaySize && (
-          <div className="technic-detail">
-            <small>Tamaño de pantalla</small>
-            <p>{product.displaySize}</p>
-          </div>
-        )}
-
-        {product.dimentions && (
-          <div className="technic-detail">
-            <small>Dimensiones</small>
-            <p>{product.dimentions}</p>
-          </div>
-        )}
-
-        {product.weight && (
-          <div className="technic-detail">
-            <small>Peso</small>
-            <p>{product.weight}gr</p>
-          </div>
-        )}
-
-        {product.battery && (
-          <div className="technic-detail">
-            <small>Batería</small>
-            <p>{product.battery}gr</p>
-          </div>
-        )}
-
-        {product.primaryCamera && (
-          <div className="technic-detail">
-            <small>Cámara principal</small>
-            <p>{product.primaryCamera}gr</p>
-          </div>
-        )}
-
-        {product.secondaryCmera && (
-          <div className="technic-detail">
-            <small>Cámara secundaria</small>
-            <p>{product.secondaryCmera}gr</p>
-          </div>
-        )}
-
-        <button>
+        <button onClick={addCart}>
           <p>AÑADIR</p>
         </button>
       </div>
