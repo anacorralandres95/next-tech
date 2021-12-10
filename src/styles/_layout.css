@@ -28,3 +28,14 @@ select {
   width: 180px;
   font-family: "OrkneyRegular";
 }
+
+button {
+  border: none;
+  background-color: #ecc95c;
+  height: 48px;
+  width: 100%;
+  margin-top: 50px;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}

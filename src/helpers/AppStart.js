@@ -7,13 +7,10 @@ const AppStart = ({ children }) => {
   const dataLoadedAt = useSelector((state) => state.productsModel.dataLoadedAt);
 
   useEffect(() => {
-    dispatch.productsModel.setDataLoadedAt({
-      date: dayjs().hour(),
-    });
-
     if (dayjs().hour() - dataLoadedAt > 0) {
-      // TODO: Hacer lo mismo con los demás modelos
+      dispatch.productsModel.setDataLoadedAt({ date: undefined });
       dispatch.productsModel.setProducts({ setProducts: undefined });
+      dispatch.productsModel.setCounter({ counter: undefined });
     }
   }, [dataLoadedAt]);
 

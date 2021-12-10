@@ -1,5 +1,5 @@
 .product-container {
-  margin-top: 60px;
+  margin: 60px 0;
   display: flex;
 }
 
@@ -53,19 +53,19 @@
   border-bottom: 1px solid rgb(0, 0, 0, 0.2);
 }
 
-.product-details button {
-  border: none;
-  background-color: #ecc95c;
-  height: 48px;
-  width: 100%;
-  margin-top: 50px;
-  color: white;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
 .product-details button:hover {
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+.product-details button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-details button img {
+  width: 12px;
+  margin-left: 12px;
 }
 
 .product-selection {
@@ -77,4 +77,16 @@
 .product-selection small {
   margin-right: 20px;
   opacity: 0.6;
+}
+
+.back a {
+  color: #000;
+  opacity: 0.6;
+}
+
+.back a img {
+  width: 20px;
+  margin-right: 12px;
+  position: relative;
+  top: 6px;
 }

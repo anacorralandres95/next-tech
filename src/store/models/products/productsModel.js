@@ -1,5 +1,6 @@
 import { createModel } from "@rematch/core";
 import ProductsService from "../../../services/ProductsService";
+import dayjs from "dayjs";
 
 export const productsModel = createModel()({
   state: {
@@ -29,6 +30,12 @@ export const productsModel = createModel()({
   effects: (dispatch) => ({
     async getProductsInfo(_, rootState) {
       try {
+        if (!rootState.productsModel.dataLoadedAt) {
+          dispatch.productsModel.setDataLoadedAt({
+            date: dayjs().hour(),
+          });
+        }
+
         if (!rootState.productsModel.products) {
           const products = await ProductsService.getProducts();
           dispatch.productsModel.setProducts({ products });
