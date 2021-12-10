@@ -42,10 +42,59 @@
   font-family: "OrkneyMedium";
   margin-right: 12px;
   cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.brand:hover {
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
 }
 
 .brand.brand-selected {
   background-color: #ecc95c;
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
   color: white;
+}
+
+.product-card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-right: 12px;
+  margin-top: 12px;
+  width: calc(100% * (1 / 4) - 12px);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.product-card:hover {
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+.product-card small {
+  font-family: "OrkneyMedium";
+  opacity: 0.6;
+  display: block;
+  margin-top: 12px;
+}
+
+.product-card img {
+  min-width: 180px;
+}
+
+.product-card .model {
+  margin-top: 6px;
+}
+
+.product-card .price {
+  margin-top: 6px;
+  background-color: #ecc95c;
+  padding: 6px;
+  color: white;
+  border-radius: 20px;
 }

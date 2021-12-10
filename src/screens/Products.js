@@ -1,4 +1,6 @@
 import React from "react";
+import BrandsFilter from "../components/brands-filter/BrandsFilter";
+import ProductCard from "../components/product-card/ProductCard";
 import ProductsUtils from "../utils/ProductUtils";
 import { useProducts } from "./useProducts";
 
@@ -49,50 +51,20 @@ const Products = () => {
         </select>
       </div>
 
-      <div className="brands-container">
-        <small className="small">Filtra por modelos</small>
+      <BrandsFilter
+        brands={brands}
+        selectedModels={selectedModels}
+        setSelectedModels={setSelectedModels}
+        clearSelectedBrands={clearSelectedBrands}
+        clearSearchValue={clearSearchValue}
+      />
 
-        <div
-          className={`brand ${selectedModels.length === 0 && "brand-selected"}`}
-          onClick={clearSelectedBrands}
-        >
-          <small>Todos</small>
-        </div>
-
-        {brands?.map((brand, i) => {
-          const onSelectBrand = () => {
-            clearSearchValue();
-            if (selectedModels.includes(brand)) {
-              setSelectedModels(selectedModels.filter((s) => s !== brand));
-            } else {
-              setSelectedModels(selectedModels.concat(brand));
-            }
-          };
-
-          const isSelected = selectedModels.includes(brand);
-
-          return (
-            <div
-              key={i}
-              className={`brand ${isSelected && "brand-selected"}`}
-              onClick={onSelectBrand}
-            >
-              <small>{brand}</small>
-            </div>
-          );
+      <div className="product-card-container">
+        {orderedData?.map((product) => {
+          if (getIsVisibleProducts(product))
+            return <ProductCard product={product} />;
         })}
       </div>
-
-      {orderedData?.map((product, i) => {
-        if (getIsVisibleProducts(product))
-          return (
-            <div key={i}>
-              <p>{product.brand}</p>
-              <p>{product.model}</p>
-              <p>{product.price}</p>
-            </div>
-          );
-      })}
     </>
   );
 };
