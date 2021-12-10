@@ -14,12 +14,21 @@
 
 .nav-bar .products {
   margin-left: 60px;
-  width: 200px;
+  width: 400px;
+}
+
+.nav-bar .products .divider {
+  margin: 0 12px;
+}
+
+.nav-bar .products a,
+.nav-bar .products p {
+  display: inline-block;
 }
 
 .nav-bar .cart {
   padding-right: 60px;
-  width: 200px;
+  width: 400px;
   text-align: right;
 }
 

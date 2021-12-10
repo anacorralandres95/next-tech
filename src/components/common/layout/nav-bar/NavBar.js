@@ -1,15 +1,23 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import cart from "../../../../assets/icons/cart.png";
 
 const NavBar = () => {
-  // TODO: Replace with counter API response
-  const counter = 1;
+  const { singularProduct, counter } = useSelector(
+    (state) => state.productsModel
+  );
 
   return (
     <div className="nav-bar">
       <div className="products">
         <a href="/">Productos</a>
-        <div className="bar"></div>
+        {!singularProduct && <div className="bar" />}
+        {singularProduct && (
+          <>
+            <p className="divider">·</p>
+            <p>{singularProduct.model}</p>
+          </>
+        )}
       </div>
       <div>
         <a href="/">
@@ -20,7 +28,7 @@ const NavBar = () => {
       <div className="cart">
         <img src={cart} className="cart-icon" />
         <div className="counter">
-          <small>{counter}</small>
+          <small>{counter ?? 0}</small>
         </div>
       </div>
     </div>

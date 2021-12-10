@@ -1,7 +1,7 @@
 import React from "react";
-import BrandsFilter from "../components/brands-filter/BrandsFilter";
-import ProductCard from "../components/product-card/ProductCard";
-import ProductsUtils from "../utils/ProductUtils";
+import BrandsFilter from "../../components/brands-filter/BrandsFilter";
+import ProductCard from "../../components/product-card/ProductCard";
+import ProductsUtils from "../../utils/ProductUtils";
 import { useProducts } from "./useProducts";
 
 const Products = () => {

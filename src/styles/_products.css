@@ -81,6 +81,7 @@
   opacity: 0.6;
   display: block;
   margin-top: 12px;
+  color: #000;
 }
 
 .product-card img {
@@ -89,6 +90,7 @@
 
 .product-card .model {
   margin-top: 6px;
+  color: #000;
 }
 
 .product-card .price {

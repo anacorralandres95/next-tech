@@ -5,6 +5,8 @@ export const productsModel = createModel()({
   state: {
     dataLoadedAt: undefined,
     products: undefined,
+    singularProduct: undefined,
+    counter: undefined,
   },
   reducers: {
     setDataLoadedAt: (state, { date }) => {
@@ -15,6 +17,10 @@ export const productsModel = createModel()({
       state.products = products;
       return state;
     },
+    setSingularProduct: (state, { product }) => {
+      state.singularProduct = product;
+      return state;
+    },
   },
   effects: (dispatch) => ({
     async getProductsInfo(_, rootState) {
@@ -23,6 +29,14 @@ export const productsModel = createModel()({
           const products = await ProductsService.getProducts();
           dispatch.productsModel.setProducts({ products });
         }
+      } catch (err) {
+        return err;
+      }
+    },
+    async getSingularProduct({ productId }) {
+      try {
+        const product = await ProductsService.getProductById({ productId });
+        dispatch.productsModel.setSingularProduct({ product });
       } catch (err) {
         return err;
       }

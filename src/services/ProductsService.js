@@ -6,6 +6,11 @@ const ProductsService = {
 
     return response.data;
   },
+  getProductById: async ({ productId }) => {
+    const response = await Api.get(`/product/${productId}`);
+
+    return response.data;
+  },
 };
 
 export default ProductsService;
