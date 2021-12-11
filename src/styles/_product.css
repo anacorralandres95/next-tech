@@ -90,3 +90,50 @@
   position: relative;
   top: 6px;
 }
+
+@media only screen and (max-width: 1080px) {
+  .product-img-container img {
+    min-height: 300px;
+  }
+
+  .product-details {
+    margin-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .product-container {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .product-img-container {
+    width: calc(100% * 1 - 60px);
+  }
+
+  .product-details {
+    width: calc(100% * 1);
+    margin-left: 0;
+    margin-top: 60px;
+  }
+
+  .back {
+    margin-top: 16px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .product-selection {
+    margin-top: 55px;
+    display: inline-block;
+  }
+
+  .product-selection select {
+    width: 100%;
+    margin: 16px 0;
+  }
+
+  button {
+    margin-top: 16px;
+  }
+}

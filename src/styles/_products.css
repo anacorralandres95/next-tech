@@ -92,3 +92,31 @@
   color: white;
   border-radius: 20px;
 }
+
+@media only screen and (max-width: 1080px) {
+  .product-card {
+    width: calc(100% * (1 / 3) - 12px);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .product-card {
+    width: calc(100% * (1 / 2) - 12px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .filters {
+    float: none;
+  }
+
+  .search {
+    width: 95%;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .product-card {
+    width: calc(100% * 1 - 12px);
+  }
+}
